@@ -47,16 +47,8 @@ describe("Test find customer use case", () => {
   });
 
   it("should not find a product", async () => {
-    const MockRepository = {
-      find: jest.fn(),
-      findAll: jest.fn(),
-      create: jest.fn(),
-      update: jest.fn(),
-    };
-    MockRepository.find.mockImplementation(() => {
-      throw new Error("Product not found");
-    });
-    const usecase = new FindProductUseCase(MockRepository);
+    const productRepository = new ProductRepository();
+    const usecase = new FindProductUseCase(productRepository);
 
     const input = {
       id: "123",
