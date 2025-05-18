@@ -7,7 +7,7 @@ import { ListProductUseCase } from "./list.product.usecase";
 const product1 = new Product("123", "Product 1", 100);
 const product2 = new Product("456", "Product 2", 200);
 
-describe("Unit test for listing product use case", () => {
+describe("Integration test for listing product use case", () => {
 let sequelize: Sequelize;
 
   beforeEach(async () => {
